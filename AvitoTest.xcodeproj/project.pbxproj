@@ -7,23 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1495F774F0DB181A9E1B056D /* Pods_AvitoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB179C737151F43F018D07D6 /* Pods_AvitoTest.framework */; };
+		153A739429003B050054ADF5 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153A739329003B050054ADF5 /* NetworkMonitor.swift */; };
+		153A7397290072940054ADF5 /* UIColor + Extns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 153A7396290072940054ADF5 /* UIColor + Extns.swift */; };
 		1546E29528FDC6C4002CE3CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546E29428FDC6C4002CE3CF /* AppDelegate.swift */; };
 		1546E29728FDC6C4002CE3CF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546E29628FDC6C4002CE3CF /* SceneDelegate.swift */; };
-		1546E29928FDC6C4002CE3CF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546E29828FDC6C4002CE3CF /* ViewController.swift */; };
-		1546E29C28FDC6C4002CE3CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1546E29A28FDC6C4002CE3CF /* Main.storyboard */; };
 		1546E29E28FDC6C8002CE3CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1546E29D28FDC6C8002CE3CF /* Assets.xcassets */; };
 		1546E2A128FDC6C8002CE3CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1546E29F28FDC6C8002CE3CF /* LaunchScreen.storyboard */; };
+		1546E2AC28FDC9A2002CE3CF /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546E2AB28FDC9A2002CE3CF /* MainVC.swift */; };
+		1546E2AF28FDCA49002CE3CF /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546E2AE28FDCA49002CE3CF /* Company.swift */; };
+		1546E2B328FDCAEB002CE3CF /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546E2B228FDCAEB002CE3CF /* MainViewModel.swift */; };
+		1546E2B528FDCE05002CE3CF /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546E2B428FDCE05002CE3CF /* NetworkService.swift */; };
+		1546E2B828FDCED0002CE3CF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546E2B728FDCED0002CE3CF /* API.swift */; };
+		1546E2BB28FE9A7C002CE3CF /* EmployeesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546E2BA28FE9A7C002CE3CF /* EmployeesCell.swift */; };
+		1546E2BD28FEB706002CE3CF /* SkillsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1546E2BC28FEB706002CE3CF /* SkillsCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		153A739329003B050054ADF5 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		153A7396290072940054ADF5 /* UIColor + Extns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extns.swift"; sourceTree = "<group>"; };
 		1546E29128FDC6C4002CE3CF /* AvitoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvitoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1546E29428FDC6C4002CE3CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1546E29628FDC6C4002CE3CF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1546E29828FDC6C4002CE3CF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1546E29B28FDC6C4002CE3CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1546E29D28FDC6C8002CE3CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1546E2A028FDC6C8002CE3CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1546E2A228FDC6C8002CE3CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1546E2AB28FDC9A2002CE3CF /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
+		1546E2AE28FDCA49002CE3CF /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		1546E2B228FDCAEB002CE3CF /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		1546E2B428FDCE05002CE3CF /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		1546E2B728FDCED0002CE3CF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		1546E2BA28FE9A7C002CE3CF /* EmployeesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesCell.swift; sourceTree = "<group>"; };
+		1546E2BC28FEB706002CE3CF /* SkillsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillsCell.swift; sourceTree = "<group>"; };
+		961B89A45C3748808839191E /* Pods-AvitoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvitoTest.debug.xcconfig"; path = "Target Support Files/Pods-AvitoTest/Pods-AvitoTest.debug.xcconfig"; sourceTree = "<group>"; };
+		E713F3872E7C4FF7D5B42739 /* Pods-AvitoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AvitoTest.release.xcconfig"; path = "Target Support Files/Pods-AvitoTest/Pods-AvitoTest.release.xcconfig"; sourceTree = "<group>"; };
+		EB179C737151F43F018D07D6 /* Pods_AvitoTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AvitoTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +49,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1495F774F0DB181A9E1B056D /* Pods_AvitoTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		153A7395290072780054ADF5 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				153A7396290072940054ADF5 /* UIColor + Extns.swift */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
 		1546E28828FDC6C4002CE3CF = {
 			isa = PBXGroup;
 			children = (
 				1546E29328FDC6C4002CE3CF /* AvitoTest */,
 				1546E29228FDC6C4002CE3CF /* Products */,
+				E03B2CF02CA074D6CCC0BF67 /* Pods */,
+				399F16B72D478349CB998F36 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +85,103 @@
 		1546E29328FDC6C4002CE3CF /* AvitoTest */ = {
 			isa = PBXGroup;
 			children = (
-				1546E29428FDC6C4002CE3CF /* AppDelegate.swift */,
-				1546E29628FDC6C4002CE3CF /* SceneDelegate.swift */,
-				1546E29828FDC6C4002CE3CF /* ViewController.swift */,
-				1546E29A28FDC6C4002CE3CF /* Main.storyboard */,
-				1546E29D28FDC6C8002CE3CF /* Assets.xcassets */,
-				1546E29F28FDC6C8002CE3CF /* LaunchScreen.storyboard */,
+				1546E2AD28FDC9D7002CE3CF /*  Resources */,
+				153A7395290072780054ADF5 /* Extentions */,
+				1546E2B128FDCACF002CE3CF /* NetworkService */,
+				1546E2AA28FDC96F002CE3CF /* Model */,
+				1546E2A928FDC96C002CE3CF /* View */,
+				1546E2A828FDC964002CE3CF /* ViewModel */,
 				1546E2A228FDC6C8002CE3CF /* Info.plist */,
 			);
 			path = AvitoTest;
+			sourceTree = "<group>";
+		};
+		1546E2A828FDC964002CE3CF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1546E2B228FDCAEB002CE3CF /* MainViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1546E2A928FDC96C002CE3CF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1546E2AB28FDC9A2002CE3CF /* MainVC.swift */,
+				1546E2B928FE9A3D002CE3CF /* Cell */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1546E2AA28FDC96F002CE3CF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1546E2AE28FDCA49002CE3CF /* Company.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1546E2AD28FDC9D7002CE3CF /*  Resources */ = {
+			isa = PBXGroup;
+			children = (
+				156907D628FEDA8B0049737B /* Assets */,
+				1546E29428FDC6C4002CE3CF /* AppDelegate.swift */,
+				1546E29628FDC6C4002CE3CF /* SceneDelegate.swift */,
+				1546E29F28FDC6C8002CE3CF /* LaunchScreen.storyboard */,
+			);
+			path = " Resources";
+			sourceTree = "<group>";
+		};
+		1546E2B128FDCACF002CE3CF /* NetworkService */ = {
+			isa = PBXGroup;
+			children = (
+				1546E2B428FDCE05002CE3CF /* NetworkService.swift */,
+				153A739329003B050054ADF5 /* NetworkMonitor.swift */,
+				1546E2B628FDCEC5002CE3CF /* API */,
+			);
+			path = NetworkService;
+			sourceTree = "<group>";
+		};
+		1546E2B628FDCEC5002CE3CF /* API */ = {
+			isa = PBXGroup;
+			children = (
+				1546E2B728FDCED0002CE3CF /* API.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		1546E2B928FE9A3D002CE3CF /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1546E2BA28FE9A7C002CE3CF /* EmployeesCell.swift */,
+				1546E2BC28FEB706002CE3CF /* SkillsCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		156907D628FEDA8B0049737B /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1546E29D28FDC6C8002CE3CF /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		399F16B72D478349CB998F36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB179C737151F43F018D07D6 /* Pods_AvitoTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E03B2CF02CA074D6CCC0BF67 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				961B89A45C3748808839191E /* Pods-AvitoTest.debug.xcconfig */,
+				E713F3872E7C4FF7D5B42739 /* Pods-AvitoTest.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +191,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1546E2A528FDC6C8002CE3CF /* Build configuration list for PBXNativeTarget "AvitoTest" */;
 			buildPhases = (
+				2249E13B32B9042379D1D602 /* [CP] Check Pods Manifest.lock */,
 				1546E28D28FDC6C4002CE3CF /* Sources */,
 				1546E28E28FDC6C4002CE3CF /* Frameworks */,
 				1546E28F28FDC6C4002CE3CF /* Resources */,
+				2EEB6F56B88FAD49DD6EBF0F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -127,34 +246,75 @@
 			files = (
 				1546E2A128FDC6C8002CE3CF /* LaunchScreen.storyboard in Resources */,
 				1546E29E28FDC6C8002CE3CF /* Assets.xcassets in Resources */,
-				1546E29C28FDC6C4002CE3CF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2249E13B32B9042379D1D602 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AvitoTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2EEB6F56B88FAD49DD6EBF0F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AvitoTest/Pods-AvitoTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AvitoTest/Pods-AvitoTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AvitoTest/Pods-AvitoTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1546E28D28FDC6C4002CE3CF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1546E29928FDC6C4002CE3CF /* ViewController.swift in Sources */,
+				1546E2B328FDCAEB002CE3CF /* MainViewModel.swift in Sources */,
+				1546E2BB28FE9A7C002CE3CF /* EmployeesCell.swift in Sources */,
 				1546E29528FDC6C4002CE3CF /* AppDelegate.swift in Sources */,
+				1546E2AC28FDC9A2002CE3CF /* MainVC.swift in Sources */,
 				1546E29728FDC6C4002CE3CF /* SceneDelegate.swift in Sources */,
+				153A7397290072940054ADF5 /* UIColor + Extns.swift in Sources */,
+				1546E2B528FDCE05002CE3CF /* NetworkService.swift in Sources */,
+				1546E2BD28FEB706002CE3CF /* SkillsCell.swift in Sources */,
+				153A739429003B050054ADF5 /* NetworkMonitor.swift in Sources */,
+				1546E2AF28FDCA49002CE3CF /* Company.swift in Sources */,
+				1546E2B828FDCED0002CE3CF /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1546E29A28FDC6C4002CE3CF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1546E29B28FDC6C4002CE3CF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1546E29F28FDC6C8002CE3CF /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -282,6 +442,7 @@
 		};
 		1546E2A628FDC6C8002CE3CF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 961B89A45C3748808839191E /* Pods-AvitoTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -292,9 +453,9 @@
 				INFOPLIST_FILE = AvitoTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,6 +471,7 @@
 		};
 		1546E2A728FDC6C8002CE3CF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E713F3872E7C4FF7D5B42739 /* Pods-AvitoTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,9 +482,9 @@
 				INFOPLIST_FILE = AvitoTest/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
