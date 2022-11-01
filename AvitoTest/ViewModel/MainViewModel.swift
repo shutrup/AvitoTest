@@ -32,7 +32,7 @@ final class MainViewModel: MainViewModelProtocol {
     }
     
     func fetchData(completion: @escaping () -> ()) {
-        networkService.getTrendingMovies { [weak self] result in
+        networkService.getEmployees { [weak self] result in
             guard let self = self else { return }
             DispatchQueue.main.async {
                 switch result {

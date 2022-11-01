@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Reachability
 
 class MainVC: UIViewController {
     

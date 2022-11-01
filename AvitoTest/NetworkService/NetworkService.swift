@@ -19,11 +19,11 @@
 import Foundation
 
 protocol NetworkServiceProtocol {
-    func getTrendingMovies(completion: @escaping (Result<[Employee], Error>) -> Void )
+    func getEmployees(completion: @escaping (Result<[Employee], Error>) -> Void )
 }
 
 class NetworkService: NetworkServiceProtocol {
-    func getTrendingMovies(completion: @escaping (Result<[Employee], Error>) -> Void) {
+    func getEmployees(completion: @escaping (Result<[Employee], Error>) -> Void) {
         guard let url = URL(string: API.baseUrl) else {return}
         
         let task = URLSession.shared.dataTask(with: URLRequest(url: url)) { data, response, error in
