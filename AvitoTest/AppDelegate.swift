@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  AvitoTest
-//
-//  Created by Шарап Бамматов on 24.08.2023.
-//
-
 import UIKit
 
 @main
