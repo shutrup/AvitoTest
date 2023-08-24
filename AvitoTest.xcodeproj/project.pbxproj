@@ -14,6 +14,9 @@
 		15019AD42A977CDE00D13E0F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15019AD32A977CDE00D13E0F /* HomeViewController.swift */; };
 		15019AD62A977D3600D13E0F /* Advertisement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15019AD52A977D3600D13E0F /* Advertisement.swift */; };
 		15019AD82A977DAE00D13E0F /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15019AD72A977DAE00D13E0F /* Detail.swift */; };
+		15019ADC2A977FEC00D13E0F /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15019ADB2A977FEC00D13E0F /* HomeViewModel.swift */; };
+		15019ADF2A97806700D13E0F /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15019ADE2A97806700D13E0F /* Observable.swift */; };
+		15019AE12A9787CE00D13E0F /* AdvertisementService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15019AE02A9787CE00D13E0F /* AdvertisementService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		15019AD32A977CDE00D13E0F /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		15019AD52A977D3600D13E0F /* Advertisement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advertisement.swift; sourceTree = "<group>"; };
 		15019AD72A977DAE00D13E0F /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
+		15019ADB2A977FEC00D13E0F /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		15019ADE2A97806700D13E0F /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		15019AE02A9787CE00D13E0F /* AdvertisementService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdvertisementService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				15019ACC2A977C0400D13E0F /* Resources */,
+				15019ADD2A97805A00D13E0F /* Helper */,
 				15019ACD2A977C2800D13E0F /* Service */,
 				15019AD02A977C4700D13E0F /* Extentions */,
 				15019ACB2A977C0000D13E0F /* Models */,
-				15019ACF2A977C3E00D13E0F /* Views */,
 				15019ACE2A977C2B00D13E0F /* Scene */,
 			);
 			path = AvitoTest;
@@ -92,6 +98,7 @@
 		15019ACD2A977C2800D13E0F /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				15019AE02A9787CE00D13E0F /* AdvertisementService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -102,13 +109,6 @@
 				15019AD12A977CA500D13E0F /* HomeView */,
 			);
 			path = Scene;
-			sourceTree = "<group>";
-		};
-		15019ACF2A977C3E00D13E0F /* Views */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		15019AD02A977C4700D13E0F /* Extentions */ = {
@@ -122,8 +122,17 @@
 			isa = PBXGroup;
 			children = (
 				15019AD32A977CDE00D13E0F /* HomeViewController.swift */,
+				15019ADB2A977FEC00D13E0F /* HomeViewModel.swift */,
 			);
 			path = HomeView;
+			sourceTree = "<group>";
+		};
+		15019ADD2A97805A00D13E0F /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				15019ADE2A97806700D13E0F /* Observable.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,8 +206,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				15019AB82A97790F00D13E0F /* AppDelegate.swift in Sources */,
+				15019ADC2A977FEC00D13E0F /* HomeViewModel.swift in Sources */,
 				15019AD82A977DAE00D13E0F /* Detail.swift in Sources */,
+				15019ADF2A97806700D13E0F /* Observable.swift in Sources */,
 				15019AD62A977D3600D13E0F /* Advertisement.swift in Sources */,
+				15019AE12A9787CE00D13E0F /* AdvertisementService.swift in Sources */,
 				15019ABA2A97790F00D13E0F /* SceneDelegate.swift in Sources */,
 				15019AD42A977CDE00D13E0F /* HomeViewController.swift in Sources */,
 			);
