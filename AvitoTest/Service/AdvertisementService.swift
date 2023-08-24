@@ -20,7 +20,7 @@ enum RequestError: Error {
 
 protocol AdvertisementServiceProtocol {
     func fetchAdvertisements(completion: @escaping (Result<AdvertisementResponse, RequestError>) -> Void)
-    func fetchDetailAdvertisement(completion: @escaping (Result<Detail, RequestError>) -> Void)
+    func fetchDetailAdvertisement(id: String, completion: @escaping (Result<Detail, RequestError>) -> Void)
 }
 
 final class AdvertisementService: AdvertisementServiceProtocol {
@@ -37,7 +37,7 @@ final class AdvertisementService: AdvertisementServiceProtocol {
                 return
             }
             
-            guard let response = response as? HTTPURLResponse else {
+            guard let _ = response as? HTTPURLResponse else {
                 completion(.failure(RequestError.noResponse))
                 return
             }
@@ -53,8 +53,8 @@ final class AdvertisementService: AdvertisementServiceProtocol {
         task.resume()
     }
     
-    func fetchDetailAdvertisement(completion: @escaping (Result<Detail, RequestError>) -> Void) {
-        guard let url = URL(string: "https://www.avito.st/s/interns-ios/details/1.json") else {
+    func fetchDetailAdvertisement(id: String, completion: @escaping (Result<Detail, RequestError>) -> Void) {
+        guard let url = URL(string: "https://www.avito.st/s/interns-ios/details/\(id).json") else {
             completion(.failure(RequestError.invalidURL))
             return
         }
@@ -64,7 +64,7 @@ final class AdvertisementService: AdvertisementServiceProtocol {
                 return
             }
             
-            guard let response = response as? HTTPURLResponse else {
+            guard let _ = response as? HTTPURLResponse else {
                 completion(.failure(RequestError.noResponse))
                 return
             }

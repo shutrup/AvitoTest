@@ -14,6 +14,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let service = AdvertisementService.advertisementService
         let viewModel = HomeViewModel(service: service)
         let nameVC = HomeViewController(viewModel: viewModel)
+        nameVC.navigationItem.largeTitleDisplayMode = .automatic
+        nameVC.title = "Товары"
         let navBar = UINavigationController(rootViewController: nameVC)
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene

@@ -5,7 +5,7 @@ final class HomeViewModel {
     
     init(service: AdvertisementServiceProtocol) {
         self.service = service
-        fetchAdvertisements()
+        self.fetchAdvertisements()
     }
     
     var advertisements: Observable<[Advertisement]> = Observable([])
@@ -15,17 +15,6 @@ final class HomeViewModel {
             switch result {
             case .success(let data):
                 self.advertisements.value = data.advertisements
-            case .failure(let error):
-                print(error)
-            }
-        }
-    }
-    
-    func fetchDetail() {
-        service.fetchDetailAdvertisement { result in
-            switch result {
-            case .success(let data):
-                print(data)
             case .failure(let error):
                 print(error)
             }
