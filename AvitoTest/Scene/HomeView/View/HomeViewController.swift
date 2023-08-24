@@ -74,7 +74,6 @@ private extension HomeViewController {
     func setUp() {
         self.view.backgroundColor = .white
         self.view.addSubview(collectionView)
-        showActivityIndicator()
         
         viewModel.advertisements.bind { [weak self] _ in
             guard let self = self else { return }
@@ -83,6 +82,22 @@ private extension HomeViewController {
                     self.hideActivityIndicator()
                     self.collectionView.reloadData()
                 }
+            }
+        }
+        
+        viewModel.viewState.bind { state in
+            switch state {
+            case .loading:
+                self.showActivityIndicator()
+            case .loaded:
+                break
+            case .error:
+                DispatchQueue.main.async {
+                    self.hideActivityIndicator()
+                    self.title = state?.message
+                }
+            case nil: break
+            case .some(.none): break
             }
         }
     }

@@ -6,14 +6,20 @@ class DetailViewController: UIViewController {
     private var viewModel: DetailViewModel
     
     init(detailId: String) {
-        self.viewModel = DetailViewModel()
-        viewModel.fetchDetailInfo(detailId: detailId)
+        self.viewModel = DetailViewModel(detailId: detailId)
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    private lazy var spinner: UIActivityIndicatorView = {
+        let spinner = UIActivityIndicatorView(style: .large)
+        spinner.hidesWhenStopped = true
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        return spinner
+    }()
     
     private let imageView: UIImageView = {
         let imageView = UIImageView()
@@ -85,9 +91,26 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         setupUI()
-        populateData()
+        
+        
+            self.viewModel.viewState.bind { state in
+                switch state {
+                case .loading:
+                    self.showActivityIndicator()
+                case .loaded:
+                    DispatchQueue.main.async {
+                        self.hideActivityIndicator()
+                        self.populateData()
+                    }
+                case .error:
+                    self.hideActivityIndicator()
+                    self.title = state?.message
+                case nil: break
+                case .some(.none): break
+                }
+        }
     }
-    
+   
     private func setupUI() {
         view.addSubview(imageView)
         view.addSubview(titleLabel)
@@ -153,6 +176,19 @@ class DetailViewController: UIViewController {
         
         if let imageURL = URL(string: detail.imageURL) {
             imageView.sd_setImage(with: imageURL, completed: nil)
+        }
+    }
+    
+    private func showActivityIndicator() {
+        spinner = UIActivityIndicatorView(style: .large)
+        spinner.center = self.view.center
+        self.view.addSubview(spinner)
+        spinner.startAnimating()
+    }
+    
+    private func hideActivityIndicator(){
+        DispatchQueue.main.async {
+            self.spinner.stopAnimating()
         }
     }
 }
