@@ -16,7 +16,7 @@ final class DetailViewModel {
             case .success(let data):
                 self.detail = data
                 self.viewState.value = .loaded
-            case .failure(let error):
+            case .failure:
                 self.viewState.value = .error
             }
         }

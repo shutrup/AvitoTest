@@ -92,25 +92,26 @@ class DetailViewController: UIViewController {
         view.backgroundColor = .white
         setupUI()
         
-        
-            self.viewModel.viewState.bind { state in
-                switch state {
-                case .loading:
-                    self.showActivityIndicator()
-                case .loaded:
-                    DispatchQueue.main.async {
-                        self.hideActivityIndicator()
-                        self.populateData()
-                    }
-                case .error:
+        self.viewModel.viewState.bind { state in
+            switch state {
+            case .loading:
+                self.showActivityIndicator()
+            case .loaded:
+                DispatchQueue.main.async {
+                    self.hideActivityIndicator()
+                    self.populateData()
+                }
+            case .error:
+                DispatchQueue.main.async {
                     self.hideActivityIndicator()
                     self.title = state?.message
-                case nil: break
-                case .some(.none): break
                 }
+            case nil: break
+            case .some(.none): break
+            }
         }
     }
-   
+    
     private func setupUI() {
         view.addSubview(imageView)
         view.addSubview(titleLabel)
