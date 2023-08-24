@@ -1,0 +1,15 @@
+*.xcuserstate
+*.xcworkspace
+*.lock
+*/xcuserdata/*
+*xcworkspace/xcuserdata/*
+.DS_Store
+*.ipa
+*.zip
+fastlane
+*.cer
+*.mobileprovision
+Gemfile
+swiftpm
+xcdebugger
+xcshareddata
