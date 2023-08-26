@@ -5,8 +5,9 @@ class DetailViewController: UIViewController {
     
     private var viewModel: DetailViewModel
     
-    init(detailId: String) {
-        self.viewModel = DetailViewModel(detailId: detailId)
+    init(service: AdvertisementServiceProtocol, detailId: String) {
+        self.viewModel = DetailViewModel(service: service, detailId: detailId)
+        self.viewModel.fetchDetailInfo()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -21,36 +22,37 @@ class DetailViewController: UIViewController {
         return spinner
     }()
     
-    private let imageView: UIImageView = {
+    private lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleToFill
         return imageView
     }()
     
-    private let titleLabel: UILabel = {
+    private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.font = UIFont.boldSystemFont(ofSize: 20)
         label.numberOfLines = 0
         return label
     }()
     
-    private let priceLabel: UILabel = {
+    private lazy var priceLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 16)
+        label.font = UIFont.systemFont(ofSize: 18)
         return label
     }()
     
-    private let locationLabel: UILabel = {
+    private lazy var locationLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = .gray
         return label
     }()
     
-    private let createdDateLabel: UILabel = {
+    private lazy var createdDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 14)
@@ -58,7 +60,7 @@ class DetailViewController: UIViewController {
         return label
     }()
     
-    private let descriptionLabel: UILabel = {
+    private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
@@ -66,32 +68,37 @@ class DetailViewController: UIViewController {
         return label
     }()
     
-    private let emailLabel: UILabel = {
+    private lazy var emailLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
     
-    private let phoneNumberLabel: UILabel = {
+    private lazy var phoneNumberLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
         return label
     }()
     
-    private let addressLabel: UILabel = {
+    private lazy var addressLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 16)
+        label.textColor = .gray
         return label
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        view.backgroundColor = .systemBackground
         setupUI()
         
+        observeViewState()
+    }
+    
+    private func observeViewState() {
         self.viewModel.viewState.bind { state in
             switch state {
             case .loading:
@@ -101,10 +108,12 @@ class DetailViewController: UIViewController {
                     self.hideActivityIndicator()
                     self.populateData()
                 }
-            case .error:
+            case .error(let error):
                 DispatchQueue.main.async {
                     self.hideActivityIndicator()
-                    self.title = state?.message
+                    self.presentErrorAlert(message: error, retryHandler: {
+                        self.viewModel.fetchDetailInfo()
+                    })
                 }
             case nil: break
             case .some(.none): break
@@ -112,54 +121,67 @@ class DetailViewController: UIViewController {
         }
     }
     
+    private func showActivityIndicator() {
+        spinner = UIActivityIndicatorView(style: .large)
+        spinner.center = self.view.center
+        self.view.addSubview(spinner)
+        spinner.startAnimating()
+    }
+    
+    private func hideActivityIndicator(){
+        DispatchQueue.main.async {
+            self.spinner.stopAnimating()
+        }
+    }
+}
+
+//MARK: UI SETUP
+private extension DetailViewController {
     private func setupUI() {
-        view.addSubview(imageView)
-        view.addSubview(titleLabel)
-        view.addSubview(priceLabel)
-        view.addSubview(locationLabel)
-        view.addSubview(createdDateLabel)
-        view.addSubview(descriptionLabel)
-        view.addSubview(emailLabel)
-        view.addSubview(phoneNumberLabel)
-        view.addSubview(addressLabel)
+        view.addSubviews(imageView, titleLabel, priceLabel, locationLabel, createdDateLabel, descriptionLabel, emailLabel, phoneNumberLabel, addressLabel)
         
+        setUpConstraints()
+    }
+    
+    private func setUpConstraints() {
         let padding: CGFloat = 16.0
         
         NSLayoutConstraint.activate([
-            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
-            imageView.heightAnchor.constraint(equalToConstant: 400.0),
+            imageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: padding),
+            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            imageView.heightAnchor.constraint(equalToConstant: 350),
             
-            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 0),
-            titleLabel.leadingAnchor.constraint(equalTo: imageView.leadingAnchor),
-            titleLabel.trailingAnchor.constraint(equalTo: imageView.trailingAnchor),
+            titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: padding),
+            titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             
-            priceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8.0),
+            priceLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             priceLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
             
-            locationLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 8.0),
-            locationLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            locationLabel.topAnchor.constraint(equalTo: priceLabel.bottomAnchor, constant: 4),
+            locationLabel.leadingAnchor.constraint(equalTo: priceLabel.leadingAnchor),
             
-            createdDateLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 8.0),
-            createdDateLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            createdDateLabel.topAnchor.constraint(equalTo: locationLabel.bottomAnchor, constant: 4),
+            createdDateLabel.leadingAnchor.constraint(equalTo: locationLabel.leadingAnchor),
             
             descriptionLabel.topAnchor.constraint(equalTo: createdDateLabel.bottomAnchor, constant: padding),
-            descriptionLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            descriptionLabel.trailingAnchor.constraint(equalTo: titleLabel.trailingAnchor),
+            descriptionLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            descriptionLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             
             emailLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: padding),
-            emailLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            emailLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: padding),
+            emailLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding),
             
-            phoneNumberLabel.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 8.0),
-            phoneNumberLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
+            phoneNumberLabel.topAnchor.constraint(equalTo: emailLabel.bottomAnchor, constant: 4),
+            phoneNumberLabel.leadingAnchor.constraint(equalTo: emailLabel.leadingAnchor),
             
-            addressLabel.topAnchor.constraint(equalTo: phoneNumberLabel.bottomAnchor, constant: 8.0),
-            addressLabel.leadingAnchor.constraint(equalTo: titleLabel.leadingAnchor),
-            addressLabel.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding)
+            addressLabel.topAnchor.constraint(equalTo: phoneNumberLabel.bottomAnchor, constant: 4),
+            addressLabel.leadingAnchor.constraint(equalTo: phoneNumberLabel.leadingAnchor),
+            addressLabel.trailingAnchor.constraint(equalTo: phoneNumberLabel.trailingAnchor),
+            addressLabel.bottomAnchor.constraint(lessThanOrEqualTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -padding)
         ])
     }
-    
     
     private func populateData() {
         guard let detail = viewModel.detail else {
@@ -177,19 +199,6 @@ class DetailViewController: UIViewController {
         
         if let imageURL = URL(string: detail.imageURL) {
             imageView.sd_setImage(with: imageURL, completed: nil)
-        }
-    }
-    
-    private func showActivityIndicator() {
-        spinner = UIActivityIndicatorView(style: .large)
-        spinner.center = self.view.center
-        self.view.addSubview(spinner)
-        spinner.startAnimating()
-    }
-    
-    private func hideActivityIndicator(){
-        DispatchQueue.main.async {
-            self.spinner.stopAnimating()
         }
     }
 }

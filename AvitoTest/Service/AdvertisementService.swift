@@ -1,23 +1,5 @@
 import Foundation
 
-enum RequestError: Error {
-    case decode
-    case invalidURL
-    case noResponse
-    case unknown
-    
-    var message: String {
-        switch self {
-        case .decode:
-            return "Decode error"
-        case .invalidURL:
-            return "invalid URL"
-        default:
-            return "Unknown error"
-        }
-    }
-}
-
 protocol AdvertisementServiceProtocol {
     func fetchAdvertisements(completion: @escaping (Result<AdvertisementResponse, RequestError>) -> Void)
     func fetchDetailAdvertisement(id: String, completion: @escaping (Result<Detail, RequestError>) -> Void)
@@ -79,5 +61,4 @@ final class AdvertisementService: AdvertisementServiceProtocol {
         
         task.resume()
     }
-    
 }

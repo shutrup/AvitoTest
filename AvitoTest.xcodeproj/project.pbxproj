@@ -21,6 +21,9 @@
 		15019AE82A97ADF000D13E0F /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 15019AE72A97ADF000D13E0F /* SDWebImage */; };
 		15019AEE2A97B40000D13E0F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15019AED2A97B40000D13E0F /* DetailViewController.swift */; };
 		15019AF02A97C43B00D13E0F /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15019AEF2A97C43B00D13E0F /* DetailViewModel.swift */; };
+		15019AF22A9A3C2800D13E0F /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15019AF12A9A3C2700D13E0F /* ViewState.swift */; };
+		15019AF42A9A3C3A00D13E0F /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15019AF32A9A3C3A00D13E0F /* RequestError.swift */; };
+		15019AF72A9A877D00D13E0F /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15019AF62A9A877D00D13E0F /* UIView + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +42,9 @@
 		15019AE42A97909500D13E0F /* HomeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewCell.swift; sourceTree = "<group>"; };
 		15019AED2A97B40000D13E0F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		15019AEF2A97C43B00D13E0F /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		15019AF12A9A3C2700D13E0F /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		15019AF32A9A3C3A00D13E0F /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
+		15019AF62A9A877D00D13E0F /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,7 +81,7 @@
 				15019ACC2A977C0400D13E0F /* Resources */,
 				15019ADD2A97805A00D13E0F /* Helper */,
 				15019ACD2A977C2800D13E0F /* Service */,
-				15019AD02A977C4700D13E0F /* Extentions */,
+				15019AF52A9A876B00D13E0F /* Extension */,
 				15019ACB2A977C0000D13E0F /* Models */,
 				15019ACE2A977C2B00D13E0F /* Scene */,
 			);
@@ -87,6 +93,7 @@
 			children = (
 				15019AD52A977D3600D13E0F /* Advertisement.swift */,
 				15019AD72A977DAE00D13E0F /* Detail.swift */,
+				15019AF12A9A3C2700D13E0F /* ViewState.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -107,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				15019AE02A9787CE00D13E0F /* AdvertisementService.swift */,
+				15019AF32A9A3C3A00D13E0F /* RequestError.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -118,13 +126,6 @@
 				15019AD12A977CA500D13E0F /* HomeView */,
 			);
 			path = Scene;
-			sourceTree = "<group>";
-		};
-		15019AD02A977C4700D13E0F /* Extentions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extentions;
 			sourceTree = "<group>";
 		};
 		15019AD12A977CA500D13E0F /* HomeView */ = {
@@ -184,6 +185,14 @@
 				15019AEF2A97C43B00D13E0F /* DetailViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		15019AF52A9A876B00D13E0F /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				15019AF62A9A877D00D13E0F /* UIView + Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,12 +273,15 @@
 			files = (
 				15019AB82A97790F00D13E0F /* AppDelegate.swift in Sources */,
 				15019ADC2A977FEC00D13E0F /* HomeViewModel.swift in Sources */,
+				15019AF22A9A3C2800D13E0F /* ViewState.swift in Sources */,
 				15019AD82A977DAE00D13E0F /* Detail.swift in Sources */,
+				15019AF72A9A877D00D13E0F /* UIView + Extension.swift in Sources */,
 				15019ADF2A97806700D13E0F /* Observable.swift in Sources */,
 				15019AD62A977D3600D13E0F /* Advertisement.swift in Sources */,
 				15019AE52A97909500D13E0F /* HomeCollectionViewCell.swift in Sources */,
 				15019AE12A9787CE00D13E0F /* AdvertisementService.swift in Sources */,
 				15019AEE2A97B40000D13E0F /* DetailViewController.swift in Sources */,
+				15019AF42A9A3C3A00D13E0F /* RequestError.swift in Sources */,
 				15019ABA2A97790F00D13E0F /* SceneDelegate.swift in Sources */,
 				15019AF02A97C43B00D13E0F /* DetailViewModel.swift in Sources */,
 				15019AD42A977CDE00D13E0F /* HomeViewController.swift in Sources */,
