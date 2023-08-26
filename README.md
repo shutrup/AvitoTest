@@ -24,19 +24,19 @@
 
 Light Theme            |  Dark Theme
 :-------------------------:|:-------------------------:
-![Light](Screenshots/LightThema1.png)  |  ![Dark](Screenshots/blackTheme1.png)
+![Light](AvitoTest/Screenshots/LightThema1.png)  |  ![Dark](AvitoTest/Screenshots/blackTheme1.png)
 
 ### Экран детальной карточки товара
 
 Light Theme            |  Dark Theme
 :-------------------------:|:-------------------------:
-![Light](Screenshots/LightThema2.png)  |  ![Dark](Screenshots/blackThema2.png)
+![Light](AvitoTest/Screenshots/LightThema2.png)  |  ![Dark](AvitoTest/Screenshots/blackThema2.png)
 
 ### Состояние экранов
 
 Экран ошибка            |  Экран загрузки
 :-------------------------:|:-------------------------:
-![Light](Screenshots/errorView.png)  |  ![Dark](Screenshots/loading.png)
+![Light](AvitoTest/Screenshots/errorView.png)  |  ![Dark](AvitoTest/Screenshots/loading.png)
 
 ## Технические детали
 
