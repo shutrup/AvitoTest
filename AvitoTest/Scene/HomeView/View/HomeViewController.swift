@@ -69,7 +69,7 @@ extension HomeViewController: UICollectionViewDelegateFlowLayout {
 extension HomeViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let item = viewModel.advertisements.value?[indexPath.row] else { return }
-        let service = AdvertisementService()
+        let service = AdvertisementService.advertisementService
         let detailViewController = DetailViewController(service: service, detailId: item.id)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
