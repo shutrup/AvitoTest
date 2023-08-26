@@ -1,10 +1,3 @@
-//
-//  UIView + Extension.swift
-//  AvitoTest
-//
-//  Created by Шарап Бамматов on 26.08.2023.
-//
-
 import UIKit
 
 extension UIView {
